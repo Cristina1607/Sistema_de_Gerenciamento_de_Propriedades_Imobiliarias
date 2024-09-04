@@ -1,0 +1,50 @@
+# Sistema de Gerenciamento de Propriedades Imobiliárias
+
+Este projeto é um sistema de gerenciamento de propriedades imobiliárias desenvolvido em SQL. Ele permite o controle de propriedades, clientes, agentes imobiliários e transações de compra e aluguel, armazenando e manipulando dados de maneira eficiente.
+
+## Funcionalidades
+
+- **Gerenciamento de Propriedades**: Armazena informações sobre propriedades, incluindo endereço, tipo, valor e status.
+- **Gerenciamento de Clientes**: Mantém os dados dos clientes, como nome, telefone, e-mail e tipo de interesse (compra ou aluguel).
+- **Gerenciamento de Agentes**: Armazena dados dos agentes imobiliários, como nome, telefone e e-mail.
+- **Registro de Transações**: Permite o registro de transações de compra e aluguel, associando clientes, agentes e propriedades.
+- **Consultas SQL**: Realiza consultas para listar propriedades disponíveis, transações de compra, e detalhes completos das transações.
+- **Atualizações e Exclusões**: Atualiza o status das propriedades e os dados dos clientes, além de remover registros conforme necessário.
+- **Joins para Relacionar Tabelas**: Usa JOIN para combinar dados de diferentes tabelas e gerar relatórios detalhados.
+
+## Estrutura do Banco de Dados
+
+O banco de dados contém as seguintes tabelas:
+
+- `Propriedades`: Armazena informações sobre as propriedades.
+- `Clientes`: Armazena informações sobre os clientes.
+- `Agentes`: Armazena informações sobre os agentes imobiliários.
+- `Transacoes`: Registra as transações de compra e aluguel.
+
+## Exemplo de Consultas SQL
+
+Algumas das consultas SQL disponíveis incluem:
+
+- Listar todas as propriedades que estão disponíveis:
+  ```sql
+  SELECT * FROM Propriedades WHERE status = 'Disponível';
+
+Listar todas as transações de compra:
+SELECT * FROM Transacoes WHERE tipo_transacao = 'Compra';
+
+Ver detalhes completos de uma transação:
+SELECT t.id_transacao, c.nome AS Nome_Cliente, a.nome AS Nome_Agente, p.endereco AS Endereco_Propriedade, t.data_transacao, t.tipo_transacao
+FROM Transacoes t
+JOIN Clientes c ON t.id_cliente = c.id_cliente
+JOIN Agentes a ON t.id_agente = a.id_agente
+JOIN Propriedades p ON t.id_propriedade = p.id_propriedade;
+
+Como Executar
+1. Clone o repositório para o seu ambiente local:
+2. git clone https://github.com/Cristina1607/Sistema_de_Gerenciamento_de_Propriedades_Imobiliarias.git
+3. Acesse o banco de dados MySQL e execute os scripts SQL para criar o banco de dados, as tabelas e inserir os dados.
+4. Modifique as consultas conforme necessário para atender às suas necessidades específicas.
+
+Tecnologias Utilizadas
+SQL
+MySQL (ou outro SGBD compatível)
