@@ -1,0 +1,49 @@
+Este arquivo `.gitignore` ignora arquivos e pastas desnecessárias, como backups de bancos de dados ou arquivos de configuração locais.
+
+```gitignore
+# Arquivos de banco de dados
+*.sql
+*.bak
+
+# Diretórios de configuração local
+.env
+config/
+
+# Arquivos temporários
+*.tmp
+*.log
+
+# Diretório de dependências (se aplicável)
+node_modules/
+vendor/
+
+# Enunciado do Projeto: Sistema de Gerenciamento de Propriedades Imobiliárias
+
+## Objetivo
+
+Desenvolver um sistema de gerenciamento de propriedades imobiliárias utilizando SQL, que permita o controle completo de propriedades, clientes, agentes imobiliários e transações.
+
+## Escopo
+
+O sistema deve contemplar as seguintes funcionalidades:
+
+1. **Criação de Tabelas**:
+   - **Propriedades**: Armazenar informações de endereço, tipo, valor e status.
+   - **Clientes**: Armazenar informações de contato e tipo de interesse.
+   - **Agentes**: Armazenar informações dos agentes imobiliários.
+   - **Transações**: Registrar compras e aluguéis associando clientes, agentes e propriedades.
+
+2. **Inserção de Dados**:
+   - Inserir dados fictícios nas tabelas para simular a operação do sistema.
+
+3. **Consultas SQL**:
+   - Consultar propriedades disponíveis, transações de compra e visualizar detalhes completos de transações.
+
+4. **Atualização de Dados**:
+   - Alterar o status das propriedades e atualizar informações de clientes.
+
+5. **Exclusão de Dados**:
+   - Remover registros de clientes e propriedades conforme necessário.
+
+6. **Uso de JOIN**:
+   - Utilizar JOIN para combinar informações de diferentes tabelas.
